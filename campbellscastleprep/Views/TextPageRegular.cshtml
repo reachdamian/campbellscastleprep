@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.TextPageRegular>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "CCPMasterRegular.cshtml";
+}
+@{
+    <p>@CurrentPage.bodyText</p>
+}
+
+
+
+@section LeftBar {
+
+    <h4>Right Section</h4>
+}

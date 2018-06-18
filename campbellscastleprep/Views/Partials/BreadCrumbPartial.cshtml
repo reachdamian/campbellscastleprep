@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Web
+
+@*
+    This snippet makes a breadcrumb of parents using an unordered HTML list.
+
+    How it works:
+    - It uses the Ancestors() method to get all parents and then generates links so the visitor can go back
+    - Finally it outputs the name of the current page (without a link)
+*@
+
+@{ 
+    var selection = Model.Content.Ancestors().ToArray(); 
+    int count = 0;
+}
+
+@if (selection.Length > 0)
+{
+    <div class="breadcrumb-container">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
+                    @foreach (var item in selection.OrderBy(x => x.Level))
+                    {
+                        if(count == 0)
+                        {
+                            <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i><a href="@item.Url">@item.Name</a> </li>
+                        }
+                        else
+                        {
+                            <li class="breadcrumb-item"><a href="@item.Url">@item.Name</a> </li>
+                        }
+                        count = count+1;
+                    }
+                
+                    @* Display the current page as the last item in the list *@
+                    <li class="breadcrumb-item active">@Model.Content.Name</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+}

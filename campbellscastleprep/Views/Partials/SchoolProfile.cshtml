@@ -1,0 +1,6 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    var homePage = CurrentPage.AncestorOrSelf(1);
+}
+<p>@homePage.schoolProfile</p>

@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{ var selection = CurrentPage.Children; }
+
+
+@if (selection.Any())
+{
+    
+        foreach (var item in selection)
+        {			
+			<div class="heading-block block ">
+              <div class="pad">
+                <a href="@item.Url"><h2 class="pad no-pad--btm heading-block__heading font--secondary--l theme--secondary-text-color">@item.Name</h2></a>
+                <div class="pad heading-block__content block__content ">
+                  <div class="spacing">
+                    <div class="text"><p class="heading-block__description block__description">@Umbraco.Truncate(@item.Description, 200)</p></div>
+                      <p><a class="heading-block__cta block__cta btn theme--secondary-background-color" href="@item.Url">Find out more</a></p>
+                  </div> <!-- /.spacing -->
+                </div> <!-- heading-block__content -->
+              </div> <!-- /.pad -->
+            </div> <!-- /.heading-block -->
+			<hr />
+        }
+    
+}

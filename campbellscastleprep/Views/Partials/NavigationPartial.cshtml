@@ -1,0 +1,114 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Web
+
+
+<header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- BUTTONS -->
+                    <ul class="float-right nav nav-pills nav-second-main">
+
+                        <!-- SEARCH -->
+                        <li class="search">
+                            <a href="javascript:;">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <!-- /SEARCH -->
+
+
+                    </ul>
+                    <!-- /BUTTONS -->
+                    <!--
+                        Top Nav
+
+                        AVAILABLE CLASSES:
+                        submenu-dark = dark sub menu
+                    -->
+                    
+<div class="navbar-collapse pull-left nav-main-collapse collapse nopadding-left nopadding-right">
+    <nav class="nav-main">
+        <ul id="topMain" class="nav nav-pills nav-main">
+            <li class="active">
+                <a href="@CurrentPage.AncestorOrSelf(1).Url">Home</a>
+            </li>
+                @foreach (var menu in CurrentPage.AncestorOrSelf(1).Children.Where("Visible"))
+                {
+                if (menu.Children.Where("Visible").Count() > 0)
+                {
+                    <li class="dropdown">
+                        <a href="@menu.Url" class="dropdown-toggle" data-toggle="dropdown">@menu.Name</a>
+
+                        <ul class="dropdown-menu">
+                            @foreach (var menuchild in menu.Children.OrderBy("Name"))
+                            {
+                                if (menuchild.Children.Where("Visible").Count() > 0)
+                                {
+                                    <li class="dropdown">
+                                        <a href="@menuchild.Url" class="dropdown-toggle" data-toggle="dropdown">@menuchild.Name</a>
+
+                                        <ul class="dropdown-menu">
+                                            @foreach (var menuchildlevel2 in menuchild.Children.OrderBy("Name"))
+                                            {
+                                                if (menuchildlevel2.Children.Where("Visible").Count() > 0)
+                                                {
+                                                    <li class="dropdown">
+                                                        <a href="@menuchildlevel2.Url" class="dropdown-toggle" data-toggle="dropdown">@menuchildlevel2.Name</a>
+
+                                                        <ul class="dropdown-menu">
+                                                            @foreach (var menuchildlevel3 in menuchildlevel2.Children.OrderBy("Name"))
+                                                            {
+                                                                <li><a href="@menuchildlevel3.Url">@menuchildlevel3.Name</a></li>
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        <a href="@menuchildlevel2.Url">@menuchildlevel2.Name</a>
+                                                    </li>
+                                                }
+
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@menuchild.Url">@menuchild.Name</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@menu.Url">@menu.Name</a>
+                        </li>
+                    }
+
+                }
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+                </div>
+            </header>
+
+
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the css class "current".
+*@
