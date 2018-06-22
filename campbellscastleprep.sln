@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "campbellscastleprep", "campbellscastleprep\campbellscastleprep.csproj", "{A84E842B-2710-4482-8D9A-0885C1BF322D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "campbellprepdb", "campbellprepdb", "{4C4026A4-593D-4D10-BE81-4E34F98F7B12}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\Backup\campbellscastledb.bak = ..\..\..\..\..\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\Backup\campbellscastledb.bak
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
