@@ -1,0 +1,305 @@
+{
+  "name": "Admission Inquiry Form",
+  "created": "2018-06-21T12:58:04.8717357-05:00",
+  "pages": [
+    {
+      "fieldSets": [
+        {
+          "caption": null,
+          "sortOrder": 0,
+          "id": "33820346-7af2-4afb-b3a0-4627bfa8e781",
+          "page": "00000000-0000-0000-0000-000000000000",
+          "containers": [
+            {
+              "caption": null,
+              "width": 12,
+              "fields": [
+                {
+                  "caption": "Consent for storing submitted data",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "dataConsent",
+                  "id": "d930a76d-d616-4f0c-813f-de5e47b2a4a7",
+                  "fieldTypeId": "a72c9df9-3847-47cf-afb8-b86773fd12cd",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Consent is required to store and process the data in this form.",
+                  "invalidErrorMessage": null,
+                  "condition": null,
+                  "settings": {
+                    "AcceptCopy": "Yes, I give permission to store and process my data",
+                    "DeclineCopy": "No, I don't consent to storing and processing my data"
+                  },
+                  "preValues": null
+                },
+                {
+                  "caption": "Child First Name",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "childFirstName",
+                  "id": "0d2829d8-67cb-4425-ffe9-692367686bc0",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Enter name",
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Child Last Name",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "childLastName",
+                  "id": "8e31c890-a5f3-4e5f-a7ff-3dcc03edc011",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Enter name",
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Parent First Name",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "parentFirstName",
+                  "id": "f90c6c1c-8a0f-4eda-b33d-6e532a119447",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Enter name",
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Parent Last Name",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "parentLastName",
+                  "id": "c5251780-ca9f-49f1-be66-cc40b6f81dce",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Enter name",
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Email Address",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "emailAddress",
+                  "id": "e3b5abaf-2a69-4c9d-9f6b-65bbfb9bb495",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": "Enter email",
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Phone Number",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "phoneNumber",
+                  "id": "20b67f1d-8004-4811-9d6a-f390b081a2ec",
+                  "fieldTypeId": "3f92e01b-29e2-4a30-bf33-9df5580ed52c",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Home Address",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "homeAddress",
+                  "id": "651912f1-2bb3-4215-ca32-53c4d89815fb",
+                  "fieldTypeId": "023f09ac-1445-4bcb-b8fa-ab49f33bd046",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": []
+                },
+                {
+                  "caption": "Grade Applying For?",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "gradeApplyingFor",
+                  "id": "b3cc3173-2d32-43a5-a95b-c5e86f61bd7e",
+                  "fieldTypeId": "0dd29d42-a6a5-11de-a2f2-222256d89593",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": [
+                    "Early Childhood",
+                    "Preparatory"
+                  ]
+                },
+                {
+                  "caption": "What would you like from us?",
+                  "tooltip": null,
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "whatWouldYouLikeFromUs",
+                  "id": "80ad4007-84a0-4bc8-b7e9-061554e0c4eb",
+                  "fieldTypeId": "0dd29d42-a6a5-11de-a2f2-222256d89593",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "containsSensitiveData": false,
+                  "mandatory": false,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": false,
+                    "actionType": "Show",
+                    "logicType": "All",
+                    "rules": []
+                  },
+                  "settings": {},
+                  "preValues": [
+                    "Enrollment",
+                    "Schedule a Meeting",
+                    "Schedule a Campus Tour"
+                  ]
+                }
+              ]
+            }
+          ],
+          "condition": null
+        }
+      ],
+      "caption": null,
+      "sortOrder": 0,
+      "id": "00000000-0000-0000-0000-000000000000",
+      "form": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "id": "a2254e46-3869-4ca4-bfa4-d4cc3e4b4f29",
+  "fieldIndicationType": "MarkMandatoryFields",
+  "indicator": "*",
+  "showValidationSummary": false,
+  "hideFieldValidation": false,
+  "requiredErrorMessage": "Please provide a value for {0}",
+  "invalidErrorMessage": "Please provide a valid value for {0}",
+  "messageOnSubmit": "Thank you",
+  "goToPageOnSubmit": 0,
+  "xPathOnSubmit": null,
+  "manualApproval": false,
+  "storeRecordsLocally": true,
+  "cssClass": null,
+  "disableDefaultStylesheet": false,
+  "useClientDependency": false,
+  "workflows": [
+    "d46a1061-51a3-4530-bea8-4ca316a08bc9"
+  ],
+  "datasource": null,
+  "submitLabel": "Submit",
+  "nextLabel": "Next",
+  "prevLabel": "Previous"
+}

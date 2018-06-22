@@ -1,0 +1,16 @@
+{
+  "id": "d46a1061-51a3-4530-bea8-4ca316a08bc9",
+  "name": "Send template email to tashanidavidson40@gmail.com",
+  "form": "a2254e46-3869-4ca4-bfa4-d4cc3e4b4f29",
+  "active": true,
+  "workflowTypeId": "17c61629-d984-4e86-b43b-a8407b3efea9",
+  "executesOn": "Submitted",
+  "settings": {
+    "Email": "tashanidavidson40@gmail.com",
+    "SenderEmail": "",
+    "Subject": "The Form '{form_name}' was submitted",
+    "RazorViewFilePath": "Forms/Emails/Example-Template.cshtml",
+    "Attachment": ""
+  },
+  "sortOrder": 1
+}

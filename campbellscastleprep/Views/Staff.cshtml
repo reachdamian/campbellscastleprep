@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Staff>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "CCPMasterRegular.cshtml";
+	
+    var featureCollection = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("otherStaff");
+    
+}
+@{
+    <h1>@CurrentPage.title</h1>
+    var principal = @Umbraco.Content(CurrentPage.principal.Id);
+   
+    
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+        		<img class="img-fluid" src="@principal.GetCropUrl("profilePicture", "normal")" alt="">
+        		<div class="caption">
+        			<h4 class="m-0">@principal.fullName</h4>
+        			<small class="mb-20 block">@principal.title</small>
+        		</div>
+        	</div>
+        </div>
+        
+        @foreach(var staff in featureCollection)
+        {
+            <div class="col-sm-3">
+                <div class="thumbnail">
+            		<img class="img-fluid" src="@staff.GetCropUrl("profilePicture", "normal")" alt="">
+            		<div class="caption">
+            			<h4 class="m-0">@staff.GetPropertyValue("fullName")</h4>
+            			<small class="mb-20 block">@staff.GetPropertyValue("title")</small>
+            		</div>
+            	</div>
+            </div>
+        }
+        
+    </div>
+    
+}

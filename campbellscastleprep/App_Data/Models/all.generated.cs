@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "139246046516c0e7")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1094d68e33a60b2b")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -279,16 +279,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Parent Page</summary>
-	[PublishedContentModel("parentPage")]
-	public partial class ParentPage : PublishedContentModel
+	/// <summary>Worker</summary>
+	[PublishedContentModel("worker")]
+	public partial class Worker : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "parentPage";
+		public new const string ModelTypeAlias = "worker";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ParentPage(IPublishedContent content)
+		public Worker(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -299,9 +299,151 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ParentPage, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Worker, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Bio
+		///</summary>
+		[ImplementPropertyType("bio")]
+		public IHtmlString Bio
+		{
+			get { return this.GetPropertyValue<IHtmlString>("bio"); }
+		}
+
+		///<summary>
+		/// Category
+		///</summary>
+		[ImplementPropertyType("category")]
+		public object Category
+		{
+			get { return this.GetPropertyValue("category"); }
+		}
+
+		///<summary>
+		/// Email
+		///</summary>
+		[ImplementPropertyType("email")]
+		public string Email
+		{
+			get { return this.GetPropertyValue<string>("email"); }
+		}
+
+		///<summary>
+		/// Full Name
+		///</summary>
+		[ImplementPropertyType("fullName")]
+		public string FullName
+		{
+			get { return this.GetPropertyValue<string>("fullName"); }
+		}
+
+		///<summary>
+		/// Profile Picture
+		///</summary>
+		[ImplementPropertyType("profilePicture")]
+		public Umbraco.Web.Models.ImageCropDataSet ProfilePicture
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("profilePicture"); }
+		}
+
+		///<summary>
+		/// Telephone Number
+		///</summary>
+		[ImplementPropertyType("telephoneNumber")]
+		public string TelephoneNumber
+		{
+			get { return this.GetPropertyValue<string>("telephoneNumber"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+		}
+	}
+
+	/// <summary>Workers</summary>
+	[PublishedContentModel("workers")]
+	public partial class Workers : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "workers";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Workers(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Workers, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Staff</summary>
+	[PublishedContentModel("staff")]
+	public partial class Staff : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "staff";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Staff(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Staff, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Other Staff
+		///</summary>
+		[ImplementPropertyType("otherStaff")]
+		public IEnumerable<IPublishedContent> OtherStaff
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("otherStaff"); }
+		}
+
+		///<summary>
+		/// Principal
+		///</summary>
+		[ImplementPropertyType("principal")]
+		public IPublishedContent Principal
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("principal"); }
 		}
 	}
 
