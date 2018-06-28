@@ -44,5 +44,5 @@
         Guid.TryParse(Request.QueryString["recordId"], out recordGuid);
     }
 
-    Html.RenderAction("RenderForm", "UmbracoForms", new {formId = form, recordId = recordGuid, theme = theme, includeScripts = includeScripts, mode = "form" });
+    Html.RenderAction("RenderForm", "UmbracoForms", new {formId = form, recordId = recordGuid, theme = theme, includeScripts = includeScripts, });
 }

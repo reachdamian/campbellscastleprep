@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Academics>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "CCPMasterRegular.cshtml";
+}
+
+@* the fun starts here *@
+
+
+@{
+    <div class="space pad-double--btm">  
+        @if (CurrentPage.HasValue("Image"))
+        {
+            <figure class="figure ">
+                <div class="img-wrap">
+                    <img class="lazy" data-original="@CurrentPage.pageImage" itemprop="image" alt="Image Alt" />
+                    <noscript><img src="@CurrentPage.pageImage" alt="Image Alt"></noscript>
+                </div> <!-- /.img-wrap -->
+                <figcaption class="figcaption"><p class="font--secondary--xs">@CurrentPage.title</p></figcaption>
+            </figure> <!-- /.figure -->
+        }
+        <h2 class="font--tertiary--l theme--primary-text-color pad-half--btm">ABOUT @academics.nameOfInstitution</h2>   
+        <p>@CurrentPage.description</p>
+    </div>
+    <hr />
+   
+   
+}
+@section RightAside{
+    <aside class="aside spacing--double">
+        <div class="pad--secondary spacing--double">
+            <p class="font--tertiary--s"></p>
+            @Umbraco.RenderMacro("InsertWorker", new { Worker = CurrentPage.Administrator })
+            @Umbraco.RenderMacro("InsertWorker", new { Worker = CurrentPage.administrativeAssistant })
+        </div>
+    </aside>
+}
+@section Footer {
+    @Html.Partial("Footer")
+}

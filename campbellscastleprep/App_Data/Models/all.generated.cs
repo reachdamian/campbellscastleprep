@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1094d68e33a60b2b")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c791611d88d8f252")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.11")]
 
 
 // FILE: models.generated.cs
@@ -444,6 +444,625 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent Principal
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("principal"); }
+		}
+	}
+
+	/// <summary>Institutions</summary>
+	[PublishedContentModel("institutions")]
+	public partial class Institutions : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "institutions";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Institutions(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Institutions, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>Institution</summary>
+	[PublishedContentModel("institution")]
+	public partial class Institution : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "institution";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Institution(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Institution, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Administrator
+		///</summary>
+		[ImplementPropertyType("administrator")]
+		public IPublishedContent Administrator
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("administrator"); }
+		}
+
+		///<summary>
+		/// Assistant Administrator
+		///</summary>
+		[ImplementPropertyType("assistantAdministrator")]
+		public IPublishedContent AssistantAdministrator
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("assistantAdministrator"); }
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("description")]
+		public IHtmlString Description
+		{
+			get { return this.GetPropertyValue<IHtmlString>("description"); }
+		}
+
+		///<summary>
+		/// Feature Description
+		///</summary>
+		[ImplementPropertyType("featureDescription")]
+		public string FeatureDescription
+		{
+			get { return this.GetPropertyValue<string>("featureDescription"); }
+		}
+
+		///<summary>
+		/// Name of Institution
+		///</summary>
+		[ImplementPropertyType("nameOfInstitution")]
+		public string NameOfInstitution
+		{
+			get { return this.GetPropertyValue<string>("nameOfInstitution"); }
+		}
+
+		///<summary>
+		/// Page Image
+		///</summary>
+		[ImplementPropertyType("pageImage")]
+		public Umbraco.Web.Models.ImageCropDataSet PageImage
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("pageImage"); }
+		}
+
+		///<summary>
+		/// subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+		}
+	}
+
+	/// <summary>Academics</summary>
+	[PublishedContentModel("academics")]
+	public partial class Academics : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "academics";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Academics(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Academics, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+	}
+
+	/// <summary>Student</summary>
+	[PublishedContentModel("student")]
+	public partial class Student : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "student";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Student(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Student, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Student Handbook
+		///</summary>
+		[ImplementPropertyType("studentHandbook")]
+		public string StudentHandbook
+		{
+			get { return this.GetPropertyValue<string>("studentHandbook"); }
+		}
+	}
+
+	/// <summary>Calender</summary>
+	[PublishedContentModel("calender")]
+	public partial class Calender : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "calender";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Calender(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Calender, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Embed Calender
+		///</summary>
+		[ImplementPropertyType("embedCalender")]
+		public IHtmlString EmbedCalender
+		{
+			get { return this.GetPropertyValue<IHtmlString>("embedCalender"); }
+		}
+
+		///<summary>
+		/// PDF Version
+		///</summary>
+		[ImplementPropertyType("pDFVersion")]
+		public string PDfversion
+		{
+			get { return this.GetPropertyValue<string>("pDFVersion"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>Events</summary>
+	[PublishedContentModel("events")]
+	public partial class Events : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "events";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Events(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Events, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>Event</summary>
+	[PublishedContentModel("event")]
+	public partial class Event : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "event";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Event(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Event, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Allow Comments
+		///</summary>
+		[ImplementPropertyType("allowComments")]
+		public bool AllowComments
+		{
+			get { return this.GetPropertyValue<bool>("allowComments"); }
+		}
+
+		///<summary>
+		/// End Date
+		///</summary>
+		[ImplementPropertyType("endDate")]
+		public DateTime EndDate
+		{
+			get { return this.GetPropertyValue<DateTime>("endDate"); }
+		}
+
+		///<summary>
+		/// Event Image
+		///</summary>
+		[ImplementPropertyType("eventImage")]
+		public Umbraco.Web.Models.ImageCropDataSet EventImage
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("eventImage"); }
+		}
+
+		///<summary>
+		/// Location
+		///</summary>
+		[ImplementPropertyType("location")]
+		public string Location
+		{
+			get { return this.GetPropertyValue<string>("location"); }
+		}
+
+		///<summary>
+		/// Start Date
+		///</summary>
+		[ImplementPropertyType("start")]
+		public DateTime Start
+		{
+			get { return this.GetPropertyValue<DateTime>("start"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>News</summary>
+	[PublishedContentModel("news")]
+	public partial class News : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "news";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public News(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<News, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>New</summary>
+	[PublishedContentModel("new")]
+	public partial class New : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "new";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public New(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<New, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Author
+		///</summary>
+		[ImplementPropertyType("author")]
+		public string Author
+		{
+			get { return this.GetPropertyValue<string>("author"); }
+		}
+
+		///<summary>
+		/// Date Posted
+		///</summary>
+		[ImplementPropertyType("datePosted")]
+		public DateTime DatePosted
+		{
+			get { return this.GetPropertyValue<DateTime>("datePosted"); }
+		}
+
+		///<summary>
+		/// Feature Description
+		///</summary>
+		[ImplementPropertyType("featureDescription")]
+		public string FeatureDescription
+		{
+			get { return this.GetPropertyValue<string>("featureDescription"); }
+		}
+
+		///<summary>
+		/// Feature Image
+		///</summary>
+		[ImplementPropertyType("featureImage")]
+		public Umbraco.Web.Models.ImageCropDataSet FeatureImage
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("featureImage"); }
+		}
+
+		///<summary>
+		/// Lead
+		///</summary>
+		[ImplementPropertyType("lead")]
+		public string Lead
+		{
+			get { return this.GetPropertyValue<string>("lead"); }
+		}
+
+		///<summary>
+		/// Source
+		///</summary>
+		[ImplementPropertyType("source")]
+		public object Source
+		{
+			get { return this.GetPropertyValue("source"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// Summary
+		///</summary>
+		[ImplementPropertyType("summary")]
+		public string Summary
+		{
+			get { return this.GetPropertyValue<string>("summary"); }
+		}
+	}
+
+	/// <summary>Media</summary>
+	[PublishedContentModel("media")]
+	public partial class Media : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "media";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Media(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Media, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Feature Description
+		///</summary>
+		[ImplementPropertyType("featureDescription")]
+		public IHtmlString FeatureDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("featureDescription"); }
+		}
+
+		///<summary>
+		/// Page Image
+		///</summary>
+		[ImplementPropertyType("pageImage")]
+		public Umbraco.Web.Models.ImageCropDataSet PageImage
+		{
+			get { return this.GetPropertyValue<Umbraco.Web.Models.ImageCropDataSet>("pageImage"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
+		}
+
+		///<summary>
+		/// UmbracoNaviHide
+		///</summary>
+		[ImplementPropertyType("umbracoNaviHide")]
+		public bool UmbracoNaviHide
+		{
+			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
+		}
+	}
+
+	/// <summary>Contact Us Page</summary>
+	[PublishedContentModel("contactUs")]
+	public partial class ContactUs : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "contactUs";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public ContactUs(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Google Map Embed Code
+		///</summary>
+		[ImplementPropertyType("googleMapEmbedCode")]
+		public IHtmlString GoogleMapEmbedCode
+		{
+			get { return this.GetPropertyValue<IHtmlString>("googleMapEmbedCode"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
 		}
 	}
 
