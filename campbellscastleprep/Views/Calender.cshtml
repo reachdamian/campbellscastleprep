@@ -1,5 +1,16 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Calender>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+	Layout = "CCPMasterRegular.cshtml";
+}
+
+@{
+	<div class="pad--primary">	
+		<div class="media-block block spacing--quarter ">
+			<a href="@CurrentPage.pDFVersion" class="btn theme--secondary-background-color">Download PDF Version&nbsp;<i class="fa fa-download" aria-hidden="true"></i></a>
+			<div class="media-block__inner spacing--quarter ">
+				@Html.Raw(CurrentPage.embedCalender)
+			</div>
+		</div>	
+	</div>
 }
