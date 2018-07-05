@@ -4,5 +4,40 @@
 	Layout = "CCPMasterRegular.cshtml";
 }
 
-@* the fun starts here *@
+@{
+    <div class="space pad-double--btm">  
+        @if (CurrentPage.HasValue("pageImage"))
+        {
+            <figure class="figure ">
+                <div class="img-wrap">
+                    	<img class="img-fluid" src="@CurrentPage.GetCropUrl("pageImage", "large")" alt="">
+                    <noscript><img src="@CurrentPage.Image" alt="Image Alt"></noscript>
+                </div> <!-- /.img-wrap -->
+                <figcaption class="figcaption"><p class="font--secondary--xs">@CurrentPage.Title</p></figcaption>
+            </figure> <!-- /.figure -->
+        }
+        <h2 class="font--tertiary--l theme--primary-text-color pad-half--btm">About @CurrentPage.NameOfInstitution</h2>   
+        <p>@CurrentPage.featureDescription</p>
+        
+        <h2 class="font--tertiary--l theme--primary-text-color pad-half--btm">Academics</h2>   
+        <p>@CurrentPage.description</p>
+    </div>
 
+
+
+      var administrator = @Umbraco.Content(CurrentPage.administrator.Id);
+   
+    <h2 class="font--tertiary--l theme--primary-text-color pad-half--btm">Staff</h2> 
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="thumbnail">
+        		<img class="img-fluid" src="@administrator.GetCropUrl("profilePicture", "normal")" alt="">
+        		<div class="caption">
+        			<h4 class="m-0">@administrator.fullName</h4>
+        			<small class="mb-20 block">@administrator.title</small>
+        		</div>
+        	</div>
+        </div>  
+    </div>  
+    
+}

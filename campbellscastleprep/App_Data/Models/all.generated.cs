@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7945b44619ad0bfd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "510830dcdb8b94e")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -212,9 +212,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Video
 		///</summary>
 		[ImplementPropertyType("video")]
-		public IPublishedContent Video
+		public IHtmlString Video
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("video"); }
+			get { return this.GetPropertyValue<IHtmlString>("video"); }
 		}
 
 		///<summary>
@@ -523,15 +523,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent Administrator
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("administrator"); }
-		}
-
-		///<summary>
-		/// Assistant Administrator
-		///</summary>
-		[ImplementPropertyType("assistantAdministrator")]
-		public IPublishedContent AssistantAdministrator
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("assistantAdministrator"); }
 		}
 
 		///<summary>
@@ -996,50 +987,6 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>Contact Us Page</summary>
-	[PublishedContentModel("contactUs")]
-	public partial class ContactUs : MasterDocumentType
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "contactUs";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public ContactUs(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Google Map Embed Code
-		///</summary>
-		[ImplementPropertyType("googleMapEmbedCode")]
-		public IHtmlString GoogleMapEmbedCode
-		{
-			get { return this.GetPropertyValue<IHtmlString>("googleMapEmbedCode"); }
-		}
-
-		///<summary>
-		/// Subtitle
-		///</summary>
-		[ImplementPropertyType("subtitle")]
-		public string Subtitle
-		{
-			get { return this.GetPropertyValue<string>("subtitle"); }
-		}
-	}
-
 	/// <summary>Students</summary>
 	[PublishedContentModel("students")]
 	public partial class Students : MasterDocumentType
@@ -1146,16 +1093,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>ECCalendar</summary>
-	[PublishedContentModel("ECCalendar")]
-	public partial class Eccalendar : PublishedContentModel
+	/// <summary>Contact Us</summary>
+	[PublishedContentModel("contactUs")]
+	public partial class ContactUs : MasterDocumentType
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "ECCalendar";
+		public new const string ModelTypeAlias = "contactUs";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public Eccalendar(IPublishedContent content)
+		public ContactUs(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -1166,31 +1113,49 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Eccalendar, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ContactUs, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 
 		///<summary>
-		/// Calendar: Select a specific calendar or use all calendar provided by EventCalendar
+		/// Google Map Embed Code
 		///</summary>
-		[ImplementPropertyType("calendar")]
-		public object Calendar
+		[ImplementPropertyType("googleMapEmbedCode")]
+		public IHtmlString GoogleMapEmbedCode
 		{
-			get { return this.GetPropertyValue("calendar"); }
+			get { return this.GetPropertyValue<IHtmlString>("googleMapEmbedCode"); }
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+
+		///<summary>
+		/// Thank You Page
+		///</summary>
+		[ImplementPropertyType("thankYouPage")]
+		public IPublishedContent ThankYouPage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("thankYouPage"); }
 		}
 	}
 
-	/// <summary>ECEventDetails</summary>
-	[PublishedContentModel("eCEventDetails")]
-	public partial class ECeventDetails : PublishedContentModel
+	/// <summary>Thank You</summary>
+	[PublishedContentModel("thankYou")]
+	public partial class ThankYou : MasterDocumentType
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "eCEventDetails";
+		public new const string ModelTypeAlias = "thankYou";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public ECeventDetails(IPublishedContent content)
+		public ThankYou(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -1201,22 +1166,57 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ECeventDetails, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ThankYou, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Subtitle
+		///</summary>
+		[ImplementPropertyType("subtitle")]
+		public string Subtitle
+		{
+			get { return this.GetPropertyValue<string>("subtitle"); }
+		}
+	}
+
+	/// <summary>Admission Inquiry Form</summary>
+	[PublishedContentModel("admissionInquiryForm")]
+	public partial class AdmissionInquiryForm : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "admissionInquiryForm";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public AdmissionInquiryForm(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AdmissionInquiryForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 	}
 
-	/// <summary>ECLocationDetails</summary>
-	[PublishedContentModel("ECLocationDetails")]
-	public partial class EclocationDetails : PublishedContentModel
+	/// <summary>School Bus</summary>
+	[PublishedContentModel("schoolBus")]
+	public partial class SchoolBus : MasterDocumentType
 	{
 #pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "ECLocationDetails";
+		public new const string ModelTypeAlias = "schoolBus";
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 #pragma warning restore 0109
 
-		public EclocationDetails(IPublishedContent content)
+		public SchoolBus(IPublishedContent content)
 			: base(content)
 		{ }
 
@@ -1227,33 +1227,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 #pragma warning restore 0109
 
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EclocationDetails, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>ECOrganiserDetails</summary>
-	[PublishedContentModel("ECOrganiserDetails")]
-	public partial class EcorganiserDetails : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "ECOrganiserDetails";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public EcorganiserDetails(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<EcorganiserDetails, TValue>> selector)
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<SchoolBus, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}

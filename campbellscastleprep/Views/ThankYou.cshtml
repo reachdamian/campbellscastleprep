@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ThankYou>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "CCPMasterRegular.cshtml";
+}
+
+@{
+
+ <div class="img-wrap">
+        <img class="img-fluid" src="@CurrentPage.GetCropUrl("pageImage", "large")" alt="">
+        <noscript><img src="@CurrentPage.Image" alt="Image Alt"></noscript>
+</div> <!-- /.img-wrap -->
+
+ 
+        <p>@CurrentPage.description</p>
+        
+}

@@ -5382,6 +5382,8 @@
     <Content Include="Umbraco_Client\Ui\json2.js" />
     <Content Include="Umbraco_Client\Ui\knockout.js" />
     <Content Include="Umbraco_Client\Ui\knockout.mapping.js" />
+    <Content Include="Views\AdmissionInquiryForm.cshtml" />
+    <Content Include="Views\ContactUs.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -5550,6 +5552,10 @@
     <Content Include="Views\Partials\NavigationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdmissionSurfaceController.cs" />
+    <Compile Include="Controllers\ContactSurfaceController.cs" />
+    <Compile Include="Models\AdmissionModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -5575,6 +5581,34 @@
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Partials\_ContactPartial.cshtml" />
+    <Content Include="Views\Academics.cshtml" />
+    <Content Include="Views\Calender.cshtml" />
+    <Content Include="Views\Calender1.cshtml" />
+    <Content Include="Views\Event.cshtml" />
+    <Content Include="Views\Event1.cshtml" />
+    <Content Include="Views\Events.cshtml" />
+    <Content Include="Views\Events1.cshtml" />
+    <Content Include="Views\Institution.cshtml" />
+    <Content Include="Views\Institutions.cshtml" />
+    <Content Include="Views\Media.cshtml" />
+    <Content Include="Views\Media1.cshtml" />
+    <Content Include="Views\New.cshtml" />
+    <Content Include="Views\New1.cshtml" />
+    <Content Include="Views\News.cshtml" />
+    <Content Include="Views\ParentPage.cshtml" />
+    <Content Include="Views\Partials\SchoolEvents.cshtml" />
+    <Content Include="Views\Partials\SchoolProfile.cshtml" />
+    <Content Include="Views\Partials\SubMenu.cshtml" />
+    <Content Include="Views\Staff.cshtml" />
+    <Content Include="Views\Student.cshtml" />
+    <Content Include="Views\Student1.cshtml" />
+    <Content Include="Views\Students.cshtml" />
+    <Content Include="Views\ThankYou.cshtml" />
+    <Content Include="Views\ThankYou1.cshtml" />
+    <Content Include="Views\Worker.cshtml" />
+    <Content Include="Views\Workers.cshtml" />
+    <Content Include="Views\Partials\_AdmissionPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5585,8 +5619,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Start\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\AdmissionSurface\" />
+    <Folder Include="Views\ContactSurface\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>

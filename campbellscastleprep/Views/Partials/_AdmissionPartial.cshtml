@@ -1,0 +1,59 @@
+﻿
+
+@model campbellscastleprep.Models.AdmissionModel
+@{
+<div class="layout-container layout-container--s pad-double">
+    
+
+    @using (Html.BeginUmbracoForm("submit", "AdmissionSurface", FormMethod.Post, new { @class = "spacing" }))
+    {
+
+       @Html.HiddenFor(model => model.AdmissionID)
+        <div class="spacing--quarter">
+            <h2 class="font--secondary--l theme--secondary-text-color">Admission Inquiry Form</h2>
+            <hr />
+        </div>
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.Firstname, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.Firstname) })
+            @Html.ValidationMessageFor(model => model.Firstname)
+        </div>
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.Lastname, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.Lastname) })
+            @Html.ValidationMessageFor(model => model.Lastname)
+        </div>
+          <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.PFirstname, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.PFirstname) })
+            @Html.ValidationMessageFor(model => model.PFirstname)
+        </div>
+          <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.PLastname, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.PLastname) })
+            @Html.ValidationMessageFor(model => model.PLastname)
+        </div>
+        
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.EmailAddress, new { @class = "form-control input-lg", type = "email", @placeholder = Html.DisplayNameFor(i => i.EmailAddress) })
+            @Html.ValidationMessageFor(model => model.EmailAddress)
+        </div>
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.TelephoneNumber, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.TelephoneNumber) })
+            @Html.ValidationMessageFor(model => model.TelephoneNumber)
+        </div>
+         <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.HomeAddress, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.HomeAddress) })
+            @Html.ValidationMessageFor(model => model.HomeAddress)
+        </div>
+
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.ReasonChoice, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.ReasonChoice) })
+            @Html.ValidationMessageFor(model => model.ReasonChoice)
+        </div>
+
+
+        <div class="spacing--quarter">
+            @Html.TextBoxFor(model => model.GradeChoice, new { @class = "form-control input-lg", type = "text", @placeholder = Html.DisplayNameFor(i => i.GradeChoice) })
+            @Html.ValidationMessageFor(model => model.GradeChoice)
+        </div>
+        <input class="theme--secondary-background-color" type="submit" value="Submit" />
+    }
+</div>
+}

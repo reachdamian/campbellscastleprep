@@ -1,5 +1,20 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ContactUs>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
+@using campbellscastleprep.Models;
+
 @{
-	Layout = null;
+	Layout = "CCPMasterRegular.cshtml";
+	 var settings = CurrentPage.AncestorOrSelf(1);
+}
+
+@{
+    @Html.Partial("_ContactPartial", new ContactModel { UmbracoID = CurrentPage.thankYouPage.Id});
+    
+    <div class="heading-block block has-border--left has-border--left--emperor">
+        <div class="pad">
+            <div class="pad heading-block__content block__content ">
+                @Html.Raw(CurrentPage.GoogleMapEmbedCode)
+            </div> <!-- heading-block__content -->
+        </div> <!-- /.pad -->
+    </div> <!-- /.heading-block -->
 }

@@ -3,3 +3,21 @@
 @{
 	Layout = "CCPMasterHome.cshtml";
 }
+
+
+
+@{
+<div class="pad--primary">
+	<div class="spacing text">
+	<figure class="figure ">
+		<figcaption class="figcaption">
+					
+		</figcaption>
+	  <div class="img-wrap fitvid">
+		@Html.Raw(CurrentPage.video)
+	  </div> <!-- /.img-wrap -->	  	
+	</figure> <!-- /.figure -->
+	<p class="font--secondary--xs">@CurrentPage.description</p>
+	</div>
+</div>
+}
