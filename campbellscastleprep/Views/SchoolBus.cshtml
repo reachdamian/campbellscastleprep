@@ -5,7 +5,15 @@
 }
 @{
 
+<div class="img-wrap">
+        <img class="img-fluid" src="@CurrentPage.GetCropUrl("pageImage", "large")" alt="">
+        <noscript><img src="@CurrentPage.Image" alt="Image Alt"></noscript>
+</div> <!-- /.img-wrap -->
 
 <h2 class="font--tertiary--l theme--primary-text-color pad-half--btm">CCSDAKP School Transportation</h2>   
         <p>@CurrentPage.bodyText</p>
+        
+        
+        
+        
 }
