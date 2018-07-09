@@ -5609,6 +5609,7 @@
     <Content Include="Views\Worker.cshtml" />
     <Content Include="Views\Workers.cshtml" />
     <Content Include="Views\Partials\_AdmissionPartial.cshtml" />
+    <Content Include="Views\SchoolBus.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

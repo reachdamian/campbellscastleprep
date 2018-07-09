@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@if (CurrentPage.Gallery != null)
+{
+    @* Get all the media item associated with the id passed in *@
+    var media = Umbraco.Media(CurrentPage.Gallery.Id);
+    var select = media.Children("bannerItem");
+
+
+    if (select.Any())
+    {
+        <!-- OWL SLIDER -->
+        <section id="slider">
+        	<div class="owl-carousel buttons-autohide controlls-over m-0" data-plugin-options='{"singleItem": true, "autoPlay": false, "navigation": true, "pagination": true, "transitionStyle":"fade"}'>
+                @foreach (var item in select)
+                {
+                    
+                    var text = item.GetPropertyValue("text");
+                    var image = item.GetPropertyValue("image");
+                    
+                    <div>
+            			<img class="img-fluid" src="@item.GetCropUrl("Image","Full")" alt="">
+            		</div>
+                }
+            </div>
+        </section>
+    }
+}
