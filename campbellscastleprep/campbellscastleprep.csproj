@@ -5384,6 +5384,8 @@
     <Content Include="Umbraco_Client\Ui\knockout.mapping.js" />
     <Content Include="Views\AdmissionInquiryForm.cshtml" />
     <Content Include="Views\ContactUs.cshtml" />
+    <Content Include="Views\Partials\GallerySlider.cshtml" />
+    <Content Include="Views\PhotoGallery.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
