@@ -901,3 +901,9 @@ umbraco.cms.presentation.Trees.LegacyTree, umbraco, Version=1.0.6743.18599, Cult
 umbraco.editorControls.MultiNodeTreePicker.FilteredContentTree, umbraco.editorControls, Version=1.0.6743.18602, Culture=neutral, PublicKeyToken=null
 umbraco.editorControls.MultiNodeTreePicker.FilteredMediaTree, umbraco.editorControls, Version=1.0.6743.18602, Culture=neutral, PublicKeyToken=null
 
+Umbraco.Web.Editors.IEditorValidator
+
+Umbraco.ModelsBuilder.Validation.ContentTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, PublicKeyToken=null
+Umbraco.ModelsBuilder.Validation.MediaTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, PublicKeyToken=null
+Umbraco.ModelsBuilder.Validation.MemberTypeModelValidator, Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, PublicKeyToken=null
+
