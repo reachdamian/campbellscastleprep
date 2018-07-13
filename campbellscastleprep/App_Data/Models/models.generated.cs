@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "f45ad651f0f8978d")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a97bf7365ef5459")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1188,6 +1188,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<AdmissionInquiryForm, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Thank You Page
+		///</summary>
+		[ImplementPropertyType("thankYouPage")]
+		public IPublishedContent ThankYouPage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("thankYouPage"); }
 		}
 	}
 

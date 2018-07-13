@@ -5384,7 +5384,6 @@
     <Content Include="Umbraco_Client\Ui\knockout.mapping.js" />
     <Content Include="Views\AdmissionInquiryForm.cshtml" />
     <Content Include="Views\ContactUs.cshtml" />
-    <Content Include="Views\Partials\GallerySlider.cshtml" />
     <Content Include="Views\PhotoGallery.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -5612,6 +5611,8 @@
     <Content Include="Views\Workers.cshtml" />
     <Content Include="Views\Partials\_AdmissionPartial.cshtml" />
     <Content Include="Views\SchoolBus.cshtml" />
+    <Content Include="Views\Partials\_PhotoGalleryPartial.cshtml" />
+    <Content Include="Views\MacroPartials\PhotoGallery.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5624,7 +5625,6 @@
     <Folder Include="App_Start\" />
     <Folder Include="Views\AdmissionSurface\" />
     <Folder Include="Views\ContactSurface\" />
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />

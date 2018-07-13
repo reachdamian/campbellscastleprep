@@ -3,47 +3,9 @@
 
 
 @{
-	Layout = "CCPMasterRegular.cshtml";
+    Layout = "CCPMasterRegular.cshtml";
 }
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  
-    <title>@CurrentPage.Title</title>
-    <link href="~/css/lightbox.css" rel="stylesheet">
-</head>
 
-
-<body>
-
-  
-
-
-<div class="photos">
-  <ul class="clearfix">
-   
-    <li><a href="flower.jpg"  data-lightbox="roadtrip" title=""><img src="flower.jpg" data-lightbox="roadtrip" width="150" height="150"></a></li>
-  
-  
-  
-    <li><a href="flower1.jpg"  data-lightbox="roadtrip" title=""><img src="flower1.jpg" data-lightbox="roadtrip" width="150" height="150"></a></li>
-<li><a href="flower2.jpg"  data-lightbox="roadtrip" title=""><img src="flower2.jpg" data-lightbox="roadtrip" width="150" height="150"></a></li>
-<li><a href="flower3.jpg"  data-lightbox="roadtrip" title=""><img src="flower3.jpg" data-lightbox="roadtrip" width="150" height="150"></a></li>
-
-    </ul>
- </div>
-
-
-      <!-- JAVASCRIPT FILES -->
-    <script>var plugin_path = 'assets/plugins/';</script>
-    <script src="~/assets/plugins/jquery/jquery-3.3.1.min.js"></script>
-    <script src="~/assets/js/scripts.js"></script>
-    <script src="~/scripts/lightbox.js"></script>
-   
-    
-
-    
-</body>
-</html>
+@Umbraco.RenderMacro("PhotoGallery", new {Folder=CurrentPage.gallery})
