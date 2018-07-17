@@ -11,13 +11,13 @@
 #header,
 #topMain.nav-pills>li,
 #topNav div.submenu-dark ul.dropdown-menu {
-	background-color:#253B80;
+	background-color: #0e2d06 !important;
 }
 #topBar {
-	background-color:#179BD7 !important;
+	background-color:#ffc0cb !important;
 }
 #topNav ul.dropdown-menu {
-	border-top-color:#179BD7 !important;
+	border-top-color:#ffc0cb !important;
 }
 
 #topNav button.btn-mobile {
