@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    // Get root node:
+    var root = CurrentPage.AncestorOrSelf(1);
+
+    // Get all descendants, filter by type:
+    var NewsItems = root.Descendants("newsItem");
+
+    <div class="g g-2up--at-medium with-divider">
+        @foreach (var newsArticle in NewsArticles.OrderBy("DatePosted desc"))
+        {
+            if (newsArticle.HasValue("TagAdministrator"))
+            {
+                var iadministrator = Umbraco.Content(newsArticle.TagAdministrator);
+
+                if (CurrentPage.Id == iadministrator.Id)
+                {
+                    <div class="gi">
+                        <div class="spacing">
+                            <div class="pad">
+                                <div class="media-block block spacing--quarter ">
+                                    <div class="media-block__inner spacing--quarter ">
+                                        <a class="media-block__image-wrap block__image-wrap db" href="@newsitem.Url">
+                                            <div class="dib"><img class="media-block__image block__image" src="@newsArticle.featureImage" alt="" /></div>
+                                        </a> <!-- /.media-block__image-wrap -->
+
+                                        <div class="media-block__content block__content ">
+                                            <h3 class="media-block__title block__title "><a href="@newsArticle.Url" class="block__title-link theme--primary-text-color">@newsArticle.Title</a></h3>
+                                            <time class="block__date font--secondary--xs brown space-half--btm" datetime="2016-12-12">@newsArticle.DatePosted.ToString("MM/dd/yyyy")</time>
+                                            <div class="spacing--half">
+                                                <div class="text text--s pad-half--btm">
+                                                    <p class="media-block__description block__description">
+                                                        <span class="font--primary--xs">
+                                                            @Umbraco.Truncate(@newsArticle.Summary, 100)                                                            
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <p><a class="media-block__cta block__cta btn theme--secondary-background-color" href="@newsArticle.Url">Read more...</a></p>
+                                            </div> <!-- /.spacing -->
+                                        </div> <!-- media-block__content -->
+                                    </div> <!-- /.media-block__inner -->
+                                </div> <!-- /.media-block -->                                
+                            </div>
+                        </div>                        
+                    </div>
+                }
+            }
+        }
+    </div>
+}
+

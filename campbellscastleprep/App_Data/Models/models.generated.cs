@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a97bf7365ef5459")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "aab82a75a8003b43")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -767,7 +767,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>News</summary>
+	/// <summary>NewsArticles</summary>
 	[PublishedContentModel("news")]
 	public partial class News : MasterDocumentType
 	{
@@ -802,7 +802,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
-	/// <summary>New</summary>
+	/// <summary>NewsArticle</summary>
 	[PublishedContentModel("new")]
 	public partial class New : MasterDocumentType
 	{
@@ -831,9 +831,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Author
 		///</summary>
 		[ImplementPropertyType("author")]
-		public string Author
+		public IPublishedContent Author
 		{
-			get { return this.GetPropertyValue<string>("author"); }
+			get { return this.GetPropertyValue<IPublishedContent>("author"); }
 		}
 
 		///<summary>
@@ -873,6 +873,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// NewsPDF
+		///</summary>
+		[ImplementPropertyType("newsPDF")]
+		public string NewsPdf
+		{
+			get { return this.GetPropertyValue<string>("newsPDF"); }
+		}
+
+		///<summary>
 		/// Source
 		///</summary>
 		[ImplementPropertyType("source")]
@@ -897,6 +906,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string Summary
 		{
 			get { return this.GetPropertyValue<string>("summary"); }
+		}
+
+		///<summary>
+		/// Tag Administrator
+		///</summary>
+		[ImplementPropertyType("tagAdministrator")]
+		public IPublishedContent TagAdministrator
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("tagAdministrator"); }
 		}
 	}
 
@@ -1258,6 +1276,32 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent Gallery
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("gallery"); }
+		}
+	}
+
+	/// <summary>Testimonial</summary>
+	[PublishedContentModel("testimonial")]
+	public partial class Testimonial : MasterDocumentType
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "testimonial";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Testimonial(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Testimonial, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
 	}
 

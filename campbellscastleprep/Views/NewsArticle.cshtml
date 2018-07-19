@@ -1,0 +1,83 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "CCPMasterRegular.cshtml";
+}
+
+@* the fun starts here *@
+
+@{
+	<div class="pad--primary">
+	<div class="spacing text">
+    <header class="article__header article__flow spacing--quarter">
+        <h1 class="font--secondary--xl theme--secondary-text-color">@CurrentPage.Title</h1>
+        <div class="spacing--half">
+            <h1 class="font--secondary--m">@CurrentPage.Lead</h1>              
+        </div>
+        <hr />
+            <span class="pub_date font--secondary--s gray can-be--white">Published: @CurrentPage.DatePosted.ToString("dd-MM-yyyy") | </span> 
+            
+            @if (CurrentPage.HasValue("Author"))
+            {
+                
+                <span class="byline font--secondary--s gray can-be--white"> @CurrentPage.author</span>
+            } 
+            <hr />
+            <br />
+            <span class='st_facebook_hcount' displayText='Facebook'></span>
+            <span class='st_twitter_hcount' displayText='Tweet'></span>
+            <span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+            <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+            <span class='st_email_hcount' displayText='Email'></span>                             
+        
+    </header>
+    
+    <div class="text article__body spacing">
+       <div class="img-wrap">
+        <img class="img-fluid" src="@CurrentPage.GetCropUrl("featureImage", "featurefull")" alt="">
+        <noscript><img src="@CurrentPage.Image" alt="Image Alt"></noscript>
+            </div> <!-- /.img-wrap -->
+        @if (CurrentPage.HasValue("bodyText"))
+        {
+            <p>
+                @CurrentPage.bodyText
+            </p>
+            
+        }
+        else
+        {
+            CurrentPage.GetGridHtml("gridContent");
+        }
+
+        <hr />
+        
+        	
+        <div class="pad--primary">	
+		<div class="media-block block spacing--quarter ">
+			<a href="@CurrentPage.newsPDF" class="btn theme--secondary-background-color">Download PDF Version News<i class="fa fa-download" aria-hidden="true"></i></a>
+			
+		</div>	
+	</div>	
+	<h3 class="font--tertiary--l theme--primary-text-color pad-half--btm">More News</h3> 
+	
+
+	
+
+        
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'campbellscastle'; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+    </div>
+	</div>
+    }

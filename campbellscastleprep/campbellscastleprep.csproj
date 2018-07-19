@@ -316,6 +316,7 @@
     <Content Include="assets\css\styles-3.css" />
     <Content Include="assets\css\styles-4.css" />
     <Content Include="assets\css\styles.css" />
+    <Content Include="assets\css\thematics-education.css" />
     <Content Include="assets\images\arrow-left.svg" />
     <Content Include="assets\images\arrow-right.svg" />
     <Content Include="assets\images\awards\award1.jpg" />
@@ -5384,6 +5385,8 @@
     <Content Include="Umbraco_Client\Ui\knockout.mapping.js" />
     <Content Include="Views\AdmissionInquiryForm.cshtml" />
     <Content Include="Views\ContactUs.cshtml" />
+    <Content Include="Views\NewsArticle.cshtml" />
+    <Content Include="Views\NewsArticles.cshtml" />
     <Content Include="Views\PhotoGallery.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -5594,9 +5597,6 @@
     <Content Include="Views\Institutions.cshtml" />
     <Content Include="Views\Media.cshtml" />
     <Content Include="Views\Media1.cshtml" />
-    <Content Include="Views\New.cshtml" />
-    <Content Include="Views\New1.cshtml" />
-    <Content Include="Views\News.cshtml" />
     <Content Include="Views\ParentPage.cshtml" />
     <Content Include="Views\Partials\SchoolEvents.cshtml" />
     <Content Include="Views\Partials\SchoolProfile.cshtml" />
@@ -5613,6 +5613,7 @@
     <Content Include="Views\SchoolBus.cshtml" />
     <Content Include="Views\Partials\_PhotoGalleryPartial.cshtml" />
     <Content Include="Views\MacroPartials\PhotoGallery.cshtml" />
+    <Content Include="Views\Partials\_InTheNews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

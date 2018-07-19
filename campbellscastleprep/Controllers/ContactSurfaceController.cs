@@ -25,7 +25,7 @@ namespace campbellscastleprep.Controllers
 
         private void SendEmail(ContactModel contact)
         {
-            MailMessage message = new MailMessage(contact.EmailAddress, "cjc@centralja.com");
+            MailMessage message = new MailMessage(contact.EmailAddress, "tashanidavidson40@gmail.com");
             message.Subject = string.Format("Enquiry from {0} {1} - {2}", contact.Firstname, contact.Lastname, contact.EmailAddress, contact.TelephoneNumber);
             message.Body = contact.Message;
             SmtpClient client = new SmtpClient("127.0.0.1", 25);
